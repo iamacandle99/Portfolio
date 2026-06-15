@@ -3,25 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-0: #06152a;
+            --bg-1: #0a2343;
+            --panel: rgba(8, 29, 54, 0.82);
+            --line: rgba(93, 184, 255, 0.42);
+            --text: #d7eeff;
+            --muted: #9ec8ea;
+            --neon: #41d8ff;
+            --neon-2: #49f3bf;
+            --shadow: rgba(2, 10, 22, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Rajdhani", "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                linear-gradient(120deg, rgba(65, 216, 255, 0.08), transparent 35%),
+                radial-gradient(circle at 80% -5%, rgba(73, 243, 191, 0.17), transparent 36%),
+                linear-gradient(160deg, var(--bg-0), var(--bg-1));
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1060px, 92%);
+            margin: 1.5rem auto 2.5rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(130deg, rgba(17, 51, 92, 0.88), rgba(6, 24, 46, 0.9));
+            padding: 1.45rem;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 0 10px 26px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -35% auto auto -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(65, 216, 255, 0.2), transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            text-shadow: 0 0 18px rgba(65, 216, 255, 0.35);
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 1rem 1.1rem;
+            box-shadow: 0 6px 16px var(--shadow);
+            backdrop-filter: blur(2px);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-subtitle {
+            margin: 0;
+            color: var(--neon-2);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--neon);
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        h3 {
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        p,
+        li {
+            color: var(--muted);
+        }
+
+        ul {
+            margin: 0.2rem 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            background: linear-gradient(95deg, var(--neon), var(--neon-2));
+            color: #02203f;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .project-link:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(13, 45, 80, 0.85), rgba(7, 25, 48, 0.9));
+            display: grid;
+            gap: 0;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(73, 243, 191, 0.62);
+            box-shadow: 0 0 20px rgba(65, 216, 255, 0.16);
+        }
+
+        .project-visual {
+            min-height: 110px;
+            background:
+                linear-gradient(90deg, rgba(65, 216, 255, 0.16), transparent 70%),
+                repeating-linear-gradient(0deg, rgba(65, 216, 255, 0.09), rgba(65, 216, 255, 0.09) 1px, transparent 1px, transparent 10px),
+                linear-gradient(135deg, rgba(38, 94, 157, 0.95), rgba(8, 36, 69, 0.9));
+            position: relative;
+        }
+
+        .project-visual::after {
+            content: "TECH BUILD";
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            background: rgba(65, 216, 255, 0.18);
+            color: #d7eeff;
+            padding: 0.2rem 0.45rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 0.07em;
+        }
+
+        .project-content {
+            padding: 0.95rem;
+        }
+
+        .project-title {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.02rem;
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .project-description {
+            margin: 0.45rem 0 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .project-status {
+            margin: 0.45rem 0 0.7rem;
+            color: var(--neon-2);
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem auto 1.5rem;
+            }
+
+            .hero,
+            .card {
+                padding: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.15rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>My Portfolio</h1>
-        <h2>About Me</h2>
-        <p>I was born in <strong>August 19 2011</strong> and my favourite food is poutine<em>(and pizza)</em>. <br><br>I play two different sports(one competitively and one for fun)</p>
-        <h3>Sports I Play/Do</h3>
-        <ol>
-            <li>Competitive Club Volleyball</li>
-            <li>Boxing</li>
-        </ol>
-        <h3>Clubs I Am Involved In:</h3>
-        <ul>
-            <li>Debate Club</li>
-            <li>Model United Nations Club</li>
-            <li>Math Club</li>
-        </ul>
-    </div>
+    <main class="container">
+        <header class="hero">
+            <h1>My Portfolio</h1>
+            <p>Cyber-themed showcase of my work, ideas, and current builds.</p>
+        </header>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <p>
+                I was born on <strong>August 19, 2011</strong>, and my favorite food is
+                poutine <em>(and pizza)</em>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Activities</h2>
+            <h3>Clubs I Am Involved In</h3>
+            <ul>
+                <li>Debate Club</li>
+                <li>Model United Nations Club</li>
+                <li>Math Club</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p class="section-subtitle">Project Grid</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-visual"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Godot Game Project (6 Weeks)</h3>
+                        <p class="project-description">
+                            A six-week game project built in Godot focused on game design,
+                            coding, and problem-solving from idea to playable result.
+                        </p>
+                        <p class="project-status">Status: Playable</p>
+                        <a class="project-link" href="https://godot-project-jwjo29xl5-saras-projects-b9febf0a.vercel.app/" target="_blank" rel="noopener noreferrer">Play Project</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-visual"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Next Project Slot</h3>
+                        <p class="project-description">
+                            Reserved box for your next project. Add title, description,
+                            and link when ready.
+                        </p>
+                        <p class="project-status">Status: Coming Soon</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-visual"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Future Build Slot</h3>
+                        <p class="project-description">
+                            Another project display box so your portfolio keeps a clean
+                            gallery format as you publish more work.
+                        </p>
+                        <p class="project-status">Status: Waiting For Launch</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
                  
