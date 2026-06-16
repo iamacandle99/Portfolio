@@ -3,32 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-<<<<<<< HEAD
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Sara's Profile</title>
     <style>
         :root {
-            --bg-0: #06152a;
-            --bg-1: #0a2343;
-            --panel: rgba(8, 29, 54, 0.82);
-            --line: rgba(93, 184, 255, 0.42);
-            --text: #d7eeff;
-            --muted: #9ec8ea;
-            --neon: #41d8ff;
-            --neon-2: #49f3bf;
-            --shadow: rgba(2, 10, 22, 0.5);
-=======
-    <style>
-        :root {
-            --text: #e6f3ff;
-            --muted: #b2cce6;
-            --card-bg: rgba(6, 22, 44, 0.75);
-            --card-border: rgba(104, 199, 255, 0.35);
-            --accent: #25d0ff;
-            --accent-2: #13b87f;
->>>>>>> f84e1e6922addc25b1feecd0f682ee995ca672fd
+            --bg-1: #07111f;
+            --bg-2: #0e2a4d;
+            --bg-3: #0a5b57;
+            --panel: rgba(7, 20, 36, 0.72);
+            --panel-border: rgba(110, 217, 255, 0.28);
+            --text: #eaf6ff;
+            --muted: #b9d3e9;
+            --accent: #49d7ff;
+            --accent-2: #28e0a0;
         }
 
         * {
@@ -37,380 +23,391 @@
 
         body {
             margin: 0;
-<<<<<<< HEAD
-            font-family: "Rajdhani", "Segoe UI", sans-serif;
-            color: var(--text);
-            background:
-                linear-gradient(120deg, rgba(65, 216, 255, 0.08), transparent 35%),
-                radial-gradient(circle at 80% -5%, rgba(73, 243, 191, 0.17), transparent 36%),
-                linear-gradient(160deg, var(--bg-0), var(--bg-1));
-            line-height: 1.5;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: min(1060px, 92%);
-            margin: 1.5rem auto 2.5rem;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .hero {
-            background: linear-gradient(130deg, rgba(17, 51, 92, 0.88), rgba(6, 24, 46, 0.9));
-            padding: 1.45rem;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            box-shadow: 0 10px 26px var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: -35% auto auto -10%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(65, 216, 255, 0.2), transparent 65%);
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            margin: 0;
-            font-family: "Orbitron", sans-serif;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            text-shadow: 0 0 18px rgba(65, 216, 255, 0.35);
-        }
-
-        .card {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 1rem 1.1rem;
-            box-shadow: 0 6px 16px var(--shadow);
-            backdrop-filter: blur(2px);
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .section-subtitle {
-            margin: 0;
-            color: var(--neon-2);
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            margin-top: 0;
-            color: var(--neon);
-            font-family: "Orbitron", sans-serif;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-
-        h3 {
-            color: var(--text);
-            margin-bottom: 0.4rem;
-        }
-
-        p,
-        li {
-            color: var(--muted);
-        }
-
-        ul {
-            margin: 0.2rem 0 0;
-            padding-left: 1.25rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 8px;
-            background: linear-gradient(95deg, var(--neon), var(--neon-2));
-            color: #02203f;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        .project-link:hover {
-            filter: brightness(1.08);
-            transform: translateY(-1px);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .project-card {
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            overflow: hidden;
-            background: linear-gradient(180deg, rgba(13, 45, 80, 0.85), rgba(7, 25, 48, 0.9));
-            display: grid;
-            gap: 0;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(73, 243, 191, 0.62);
-            box-shadow: 0 0 20px rgba(65, 216, 255, 0.16);
-        }
-
-        .project-visual {
-            min-height: 110px;
-            background:
-                linear-gradient(90deg, rgba(65, 216, 255, 0.16), transparent 70%),
-                repeating-linear-gradient(0deg, rgba(65, 216, 255, 0.09), rgba(65, 216, 255, 0.09) 1px, transparent 1px, transparent 10px),
-                linear-gradient(135deg, rgba(38, 94, 157, 0.95), rgba(8, 36, 69, 0.9));
-            position: relative;
-        }
-
-        .project-visual::after {
-            content: "TECH BUILD";
-            position: absolute;
-            right: 0.6rem;
-            bottom: 0.6rem;
-            background: rgba(65, 216, 255, 0.18);
-            color: #d7eeff;
-            padding: 0.2rem 0.45rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            letter-spacing: 0.07em;
-        }
-
-        .project-content {
-            padding: 0.95rem;
-        }
-
-        .project-title {
-            margin: 0;
-            color: var(--text);
-            font-size: 1.02rem;
-            font-family: "Orbitron", sans-serif;
-            letter-spacing: 0.03em;
-        }
-
-        .project-description {
-            margin: 0.45rem 0 0.9rem;
-            font-size: 0.95rem;
-        }
-
-        .project-status {
-            margin: 0.45rem 0 0.7rem;
-            color: var(--neon-2);
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                margin: 1rem auto 1.5rem;
-            }
-
-            .hero,
-            .card {
-                padding: 1rem;
-            }
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.15rem;
-            }
-=======
             min-height: 100vh;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at 8% 10%, rgba(0, 210, 255, 0.35), transparent 40%),
-                radial-gradient(circle at 90% 8%, rgba(2, 123, 255, 0.35), transparent 36%),
-                radial-gradient(circle at 50% 95%, rgba(19, 184, 127, 0.35), transparent 38%),
-                linear-gradient(155deg, #020917 0%, #07224a 35%, #0b3a66 62%, #0a4f47 100%);
-            background-attachment: fixed;
+                radial-gradient(circle at 12% 18%, rgba(73, 215, 255, 0.28), transparent 28%),
+                radial-gradient(circle at 86% 14%, rgba(40, 224, 160, 0.24), transparent 24%),
+                radial-gradient(circle at 50% 88%, rgba(73, 215, 255, 0.16), transparent 26%),
+                linear-gradient(145deg, var(--bg-1), var(--bg-2) 48%, var(--bg-3));
         }
 
-        .container {
-            width: min(900px, 92vw);
-            margin: 40px auto;
-            padding: 24px;
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            background: var(--card-bg);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+        .page {
+            width: min(1100px, 92vw);
+            margin: 0 auto;
+            padding: 36px 0 48px;
         }
 
-        h1, h2, h3 {
-            margin-top: 0;
-            letter-spacing: 0.3px;
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 38px 28px;
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(9, 21, 40, 0.92), rgba(8, 36, 58, 0.82));
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            inset: -80px auto auto -70px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(73, 215, 255, 0.28), transparent 68%);
+        }
+
+        .hero::after {
+            right: -50px;
+            bottom: -70px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(40, 224, 160, 0.22), transparent 66%);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 16px;
+            padding: 8px 14px;
+            border: 1px solid rgba(73, 215, 255, 0.28);
+            border-radius: 999px;
+            background: rgba(12, 31, 52, 0.62);
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 18px rgba(73, 215, 255, 0.55);
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            margin-bottom: 14px;
+            margin: 0;
+            font-size: clamp(2.4rem, 7vw, 4.8rem);
+            line-height: 0.98;
+            letter-spacing: 0.03em;
         }
 
-        h2 {
-            color: #95d8ff;
-            margin-top: 28px;
+        .hero p {
+            max-width: 62ch;
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: 1.03rem;
+            line-height: 1.7;
         }
 
-        p, li {
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .panel {
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+            padding: 22px;
+            border: 1px solid var(--panel-border);
+            border-radius: 22px;
+            background: var(--panel);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+        }
+
+        .panel::after {
+            content: "";
+            position: absolute;
+            inset: auto -15% -40% auto;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(73, 215, 255, 0.14), transparent 72%);
+            pointer-events: none;
+        }
+
+        .panel h2 {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .panel p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .panel.large {
+            grid-column: span 7;
+            min-height: 240px;
+            background:
+                linear-gradient(135deg, rgba(8, 25, 43, 0.94), rgba(11, 58, 86, 0.78)),
+                repeating-linear-gradient(135deg, rgba(73, 215, 255, 0.08) 0 10px, transparent 10px 22px);
+        }
+
+        .panel.small {
+            grid-column: span 5;
+            display: grid;
+            align-content: end;
+            background:
+                linear-gradient(160deg, rgba(7, 24, 44, 0.92), rgba(10, 81, 71, 0.76)),
+                radial-gradient(circle at 20% 20%, rgba(40, 224, 160, 0.14), transparent 30%);
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .stat {
+            padding: 18px;
+            border: 1px solid rgba(73, 215, 255, 0.22);
+            border-radius: 18px;
+            background: rgba(10, 26, 47, 0.68);
+        }
+
+        .stat .label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .stat .value {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .projects {
+            margin-top: 18px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 14px;
+            margin: 0 0 14px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 1rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            padding: 22px;
+            border: 1px solid rgba(73, 215, 255, 0.24);
+            border-radius: 20px;
+            background: linear-gradient(160deg, rgba(10, 24, 44, 0.9), rgba(9, 44, 66, 0.78));
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            inset: -30% auto auto -20%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(73, 215, 255, 0.16), transparent 70%);
+            pointer-events: none;
+        }
+
+        .project-card h3 {
+            position: relative;
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .project-card p {
+            position: relative;
+            margin: 0 0 16px;
             color: var(--muted);
             line-height: 1.6;
         }
 
-        a {
-            color: var(--accent);
+        .project-card a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #042134;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: 600;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
 
-        a:hover {
-            color: #95f8ff;
-            text-decoration: underline;
-        }
-
-        .project-list {
-            margin-top: 14px;
-            display: grid;
-            gap: 10px;
-        }
-
-        .project-link {
-            padding: 12px 14px;
-            border: 1px solid rgba(37, 208, 255, 0.35);
-            border-radius: 12px;
-            background: rgba(6, 34, 63, 0.65);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .project-link:hover {
+        .project-card a:hover {
             transform: translateY(-2px);
-            border-color: var(--accent-2);
->>>>>>> f84e1e6922addc25b1feecd0f682ee995ca672fd
+            filter: brightness(1.05);
+            text-decoration: none;
+        }
+
+        .project-glow {
+            position: absolute;
+            right: -30px;
+            bottom: -30px;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(40, 224, 160, 0.28), transparent 70%);
+        }
+
+        .project-glow.alt {
+            background: radial-gradient(circle, rgba(73, 215, 255, 0.3), transparent 70%);
+        }
+
+        .stripe {
+            position: absolute;
+            inset: auto 22px 22px 22px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            opacity: 0.95;
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                padding-top: 18px;
+                padding-bottom: 28px;
+            }
+
+            .hero {
+                padding: 26px 20px;
+                border-radius: 20px;
+            }
+
+            .panel.large,
+            .panel.small {
+                grid-column: span 12;
+            }
+
+            .stat-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading,
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-    <main class="container">
-        <header class="hero">
-            <h1>My Portfolio</h1>
-            <p>Cyber-themed showcase of my work, ideas, and current builds.</p>
-        </header>
-
-        <section class="card">
-            <h2>About Me</h2>
-            <p>
-                I was born on <strong>August 19, 2011</strong>, and my favorite food is
-                poutine <em>(and pizza)</em>.
-            </p>
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">Sara's profile</p>
+            <h1>Creative, clean, and bold.</h1>
         </section>
 
-        <section class="card">
-            <h2>Activities</h2>
-            <h3>Clubs I Am Involved In</h3>
-            <ul>
-                <li>Debate Club</li>
-                <li>Model United Nations Club</li>
-                <li>Math Club</li>
-            </ul>
+        <section class="design-grid" aria-label="Decorative design panels">
+            <article class="panel large">
+                <h2>Visual Direction</h2>
+                <div class="stripe"></div>
+            </article>
+
+            <article class="panel small">
+                <h2>Focus</h2>
+            </article>
         </section>
 
-        <section class="card">
-            <div class="section-header">
+        <section class="projects" aria-label="Projects">
+            <div class="section-heading">
                 <h2>Projects</h2>
-                <p class="section-subtitle">Project Grid</p>
+                <p>Selected builds and games</p>
             </div>
 
             <div class="project-grid">
                 <article class="project-card">
-                    <div class="project-visual"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Godot Game Project (6 Weeks)</h3>
-                        <p class="project-description">
-                            A six-week game project built in Godot focused on game design,
-                            coding, and problem-solving from idea to playable result.
-                        </p>
-                        <p class="project-status">Status: Playable</p>
-                        <a class="project-link" href="https://godot-project-jwjo29xl5-saras-projects-b9febf0a.vercel.app/" target="_blank" rel="noopener noreferrer">Play Project</a>
-                    </div>
+                    <div class="project-glow"></div>
+                    <h3>Godot Game Project</h3>
+                    <p>A six-week game project built in Godot focused on design, coding, and playability.</p>
+                    <a href="https://godot-project-jwjo29xl5-saras-projects-b9febf0a.vercel.app/" target="_blank" rel="noopener noreferrer">Play Project</a>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-visual"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Next Project Slot</h3>
-                        <p class="project-description">
-                            Reserved box for your next project. Add title, description,
-                            and link when ready.
-                        </p>
-                        <p class="project-status">Status: Coming Soon</p>
-                    </div>
+                    <div class="project-glow alt"></div>
+                    <h3>Aurum Shines Tasks</h3>
+                    <p>A clean task board project with a bold layout and a polished app-style interface. Password is 1111.</p>
+                    <a href="https://aurum-shines-tasks.lovable.app/" target="_blank" rel="noopener noreferrer">Open Project</a>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-visual"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Future Build Slot</h3>
-                        <p class="project-description">
-                            Another project display box so your portfolio keeps a clean
-                            gallery format as you publish more work.
-                        </p>
-                        <p class="project-status">Status: Waiting For Launch</p>
-                    </div>
+                    <div class="project-glow"></div>
+                    <h3>Mini Games</h3>
+                    <p>A playful project collection that keeps the portfolio varied and visually engaging.</p>
+                    <a href="https://mini-games-jade.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
                 </article>
             </div>
         </section>
-    </main>
-=======
-    <div class="container">
-        <h1>My Portfolio</h1>
-        <h2>About Me</h2>
-        <p>I was born in <strong>August 19 2011</strong> and my favourite food is poutine<em>(and pizza)</em>. <br><br>I play two different sports(one competitively and one for fun)</p>
-        <h3>Sports I Play/Do</h3>
-        <ol>
-            <li>Competitive Club Volleyball</li>
-            <li>Boxing</li>
-        </ol>
-        <h3>Clubs I Am Involved In:</h3>
-        <ul>
-            <li>Debate Club</li>
-            <li>Model United Nations Club</li>
-            <li>Math Club. Note-Access Code to Aurum=1111</li>
-        </ul>
 
-        <h2>My Projects</h2>
-        <div class="project-list">
-            <div class="project-link">
-                <a href="https://aurum-shines-tasks.lovable.app/" target="_blank" rel="noopener noreferrer">Aurum Shines Tasks</a>
+        <section class="stat-row" aria-label="Highlights">
+            <div class="stat">
+                <span class="label">Style</span>
+                <span class="value">Futuristic</span>
             </div>
-            <div class="project-link">
-                <a href="https://mini-games-jade.vercel.app/" target="_blank" rel="noopener noreferrer">Mini Games</a>
+            <div class="stat">
+                <span class="label">Layout</span>
+                <span class="value">Responsive</span>
             </div>
-        </div>
-    </div>
->>>>>>> f84e1e6922addc25b1feecd0f682ee995ca672fd
+            <div class="stat">
+                <span class="label">Tone</span>
+                <span class="value">Polished</span>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
